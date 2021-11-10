@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="customizehomebutton">
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+        </intent>
+    </queries>
+
+    <application
+        android:name="jp.gr.java_conf.alpherg0221.customizehomebutton.CHBApplication"
+        android:allowBackup="true"
+        android:fullBackupContent="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CustomHomeButton">
+        <activity
+            android:name="jp.gr.java_conf.alpherg0221.customizehomebutton.ui.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.CustomHomeButton.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="jp.gr.java_conf.alpherg0221.customizehomebutton.LauncherActivity"
+            android:exported="false"
+            android:theme="@style/Theme.CustomHomeButton.Transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.ASSIST" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.systemui.action_assist_icon"
+                android:resource="@drawable/ic_assist" />
+        </activity>
+    </application>
+
+</manifest>

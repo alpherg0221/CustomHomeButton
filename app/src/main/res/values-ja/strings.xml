@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">CustomizeHomeButton</string>
+
+    <!--Drawer Content -->
+    <string name="home">ホーム</string>
+    <string name="settings">設定</string>
+    <string name="app_information">このアプリについて</string>
+
+    <!--Home Content-->
+    <string name="selected_app">選択されているアプリ</string>
+
+    <!--Settings Content-->
+    <string name="general">一般</string>
+    <string name="theme">テーマ</string>
+    <string name="dark_theme">ダークテーマ</string>
+    <string name="light_theme">ライトテーマ</string>
+    <string name="default_theme">システムのデフォルト</string>
+
+    <!--My App Information Content-->
+    <string name="version">バージョン</string>
+    <string name="oss">オープンソースライセンス</string>
+</resources>
