@@ -22,6 +22,7 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import customizehomebutton.R
+import jp.gr.java_conf.alpherg0221.customizehomebutton.ui.components.DrawerButton
 
 @Composable
 fun AppDrawer(
@@ -84,64 +85,5 @@ fun CHBLogo(modifier: Modifier = Modifier) {
             fontWeight = FontWeight.ExtraBold,
             fontFamily = FontFamily.Monospace
         )
-    }
-}
-
-@Composable
-private fun DrawerButton(
-    icon: ImageVector,
-    label: String,
-    isSelected: Boolean,
-    action: () -> Unit,
-    modifier: Modifier = Modifier
-) {
-    val colors = MaterialTheme.colors
-    val imageAlpha = if (isSelected) {
-        1f
-    } else {
-        0.6f
-    }
-    val textIconColor = if (isSelected) {
-        colors.primary
-    } else {
-        colors.onSurface.copy(alpha = 0.6f)
-    }
-    val backgroundColor = if (isSelected) {
-        colors.primary.copy(alpha = 0.12f)
-    } else {
-        Color.Transparent
-    }
-
-    val surfaceModifier = modifier
-        .padding(start = 8.dp, top = 8.dp, end = 8.dp)
-        .fillMaxWidth()
-    Surface(
-        modifier = surfaceModifier,
-        color = backgroundColor,
-        shape = MaterialTheme.shapes.small
-    ) {
-        TextButton(
-            onClick = action,
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Row(
-                horizontalArrangement = Arrangement.Start,
-                verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Image(
-                    imageVector = icon,
-                    contentDescription = null,
-                    colorFilter = ColorFilter.tint(textIconColor),
-                    alpha = imageAlpha
-                )
-                Spacer(Modifier.width(12.dp))
-                Text(
-                    text = label,
-                    style = MaterialTheme.typography.body2,
-                    color = textIconColor
-                )
-            }
-        }
     }
 }
