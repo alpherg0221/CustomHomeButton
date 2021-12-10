@@ -14,10 +14,17 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="Theme.CustomHomeButton.Starting" parent="Theme.SplashScreen.IconBackground">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="windowSplashScreenIconBackgroundColor">@color/white</item>
+        <item name="windowSplashScreenAnimationDuration">200</item>
+        <item name="postSplashScreenTheme">@style/Theme.CustomHomeButton.NoActionBar</item>
+    </style>
+
     <style name="Theme.CustomHomeButton.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="backgroundColor">@android:color/transparent</item>
     </style>
 
     <style name="Theme.CustomHomeButton.Transparent">
