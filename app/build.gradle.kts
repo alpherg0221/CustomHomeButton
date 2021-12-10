@@ -66,6 +66,7 @@ dependencies {
     implementation("androidx.activity:activity-ktx:1.4.0")
     implementation("androidx.fragment:fragment-ktx:1.4.0")
     implementation("androidx.appcompat:appcompat:1.4.0")
+    implementation("androidx.core:core-splashscreen:1.0.0-alpha02")
     implementation("com.google.android.material:material:1.4.0")
 
     // lifecycle
