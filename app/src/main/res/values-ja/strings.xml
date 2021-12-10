@@ -18,5 +18,7 @@
 
     <!--My App Information Content-->
     <string name="version">バージョン</string>
+    <string name="version_sub">1.0.0</string>
     <string name="oss">オープンソースライセンス</string>
+    <string name="oss_sub">License details for open source software</string>
 </resources>

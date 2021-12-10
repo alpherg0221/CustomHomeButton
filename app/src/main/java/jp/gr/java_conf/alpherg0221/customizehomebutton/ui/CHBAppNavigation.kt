@@ -1,6 +1,8 @@
 package jp.gr.java_conf.alpherg0221.customizehomebutton.ui
 
+import android.content.Intent
 import androidx.navigation.NavHostController
+import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 
 object CHBDestinations {
     const val HOME_ROUTE = "home"
@@ -18,6 +20,10 @@ class CHBAppNavigationActions(navController: NavHostController) {
     }
     val navigateToInfo: () -> Unit = {
         navController.navigate(CHBDestinations.APP_INFO_ROUTE)
+    }
+    val navigateToOSS: () -> Unit = {
+        val context = navController.context
+        context.startActivity(Intent(context, OssLicensesMenuActivity::class.java))
     }
     val onBack: () -> Unit = {
         navController.navigateUp()

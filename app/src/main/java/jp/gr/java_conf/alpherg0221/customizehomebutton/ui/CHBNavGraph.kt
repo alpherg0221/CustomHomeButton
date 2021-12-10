@@ -21,6 +21,7 @@ fun CHBNavGraph(
     navController: NavHostController = rememberNavController(),
     openDrawer: () -> Unit = {},
     onBack: () -> Unit = {},
+    navigationActions: CHBAppNavigationActions,
     startDestination: String = CHBDestinations.HOME_ROUTE,
     reload: () -> Unit = {},
 ) {
@@ -52,12 +53,11 @@ fun CHBNavGraph(
         }
         composable(CHBDestinations.APP_INFO_ROUTE) {
             val myAppInfoViewModel: MyAppInfoViewModel = viewModel(
-                factory = MyAppInfoViewModel.provideFactory(
-                    myAppInfoRepository = appContainer.myAppInfoRepository
-                )
+                factory = MyAppInfoViewModel.provideFactory()
             )
             MyAppInfoScreen(
                 myAppInfoViewModel = myAppInfoViewModel,
+                navigateToOSS = navigationActions.navigateToOSS,
                 onBack = onBack,
             )
         }
