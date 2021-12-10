@@ -81,6 +81,7 @@ fun CHBApp(
                     navController = navController,
                     openDrawer = { scope.launch { sizeAwareDrawerState.open() } },
                     onBack = navigationActions.onBack,
+                    navigationActions = navigationActions,
                     startDestination = if (isDefaultAssistApp.value) CHBDestinations.HOME_ROUTE else CHBDestinations.DEFAULT_ROUTE,
                     reload = {
                         isDefaultAssistApp.value =

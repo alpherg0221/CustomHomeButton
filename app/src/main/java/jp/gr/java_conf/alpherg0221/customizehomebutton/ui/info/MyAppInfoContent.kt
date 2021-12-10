@@ -16,7 +16,6 @@ import jp.gr.java_conf.alpherg0221.customizehomebutton.ui.components.Preferences
 @Composable
 fun MyAppInfoContent(
     onBack: () -> Unit,
-    info: MyAppInfo,
     onVersionClick: () -> Unit,
     onOSSClick: () -> Unit
 ) {
@@ -38,12 +37,12 @@ fun MyAppInfoContent(
         Column(modifier = Modifier.navigationBarsPadding()) {
             PreferencesItem(
                 title = stringResource(R.string.version),
-                subtitle = info.version,
+                subtitle = stringResource(id = R.string.version_sub),
                 onClick = onVersionClick
             )
             PreferencesItem(
                 title = stringResource(id = R.string.oss),
-                subtitle = "License details for open source software",
+                subtitle = stringResource(id = R.string.oss_sub),
                 onClick = onOSSClick
             )
         }
