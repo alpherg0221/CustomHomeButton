@@ -1,6 +1,7 @@
 package jp.gr.java_conf.alpherg0221.customizehomebutton.ui.setting
 
 import android.content.res.Configuration
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.material.*
@@ -16,7 +17,6 @@ import androidx.compose.ui.res.stringResource
 import com.google.accompanist.insets.navigationBarsPadding
 import customizehomebutton.R
 import jp.gr.java_conf.alpherg0221.customizehomebutton.model.AppTheme
-import jp.gr.java_conf.alpherg0221.customizehomebutton.ui.components.BackHandler
 import jp.gr.java_conf.alpherg0221.customizehomebutton.ui.components.InsetAwareTopAppBar
 import jp.gr.java_conf.alpherg0221.customizehomebutton.ui.components.PreferencesItem
 import jp.gr.java_conf.alpherg0221.customizehomebutton.ui.components.PreferencesTitle

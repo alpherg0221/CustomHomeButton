@@ -1,5 +1,6 @@
 package jp.gr.java_conf.alpherg0221.customizehomebutton.ui
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.*
 import androidx.compose.runtime.*
@@ -12,10 +13,9 @@ import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.accompanist.insets.rememberInsetsPaddingValues
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import jp.gr.java_conf.alpherg0221.compose.material.theme.BlueJadeTheme
 import jp.gr.java_conf.alpherg0221.customizehomebutton.data.AppContainer
 import jp.gr.java_conf.alpherg0221.customizehomebutton.model.AppTheme
-import jp.gr.java_conf.alpherg0221.customizehomebutton.ui.components.BackHandler
-import jp.gr.java_conf.alpherg0221.customizehomebutton.ui.theme.CustomizeHomeButtonTheme
 import jp.gr.java_conf.alpherg0221.customizehomebutton.utils.WindowSize
 import kotlinx.coroutines.launch
 
@@ -30,7 +30,7 @@ fun CHBApp(
         mutableStateOf(appContainer.deviceRepository.isDefaultAssistApp())
     }
 
-    CustomizeHomeButtonTheme(
+    BlueJadeTheme(
         darkTheme = when (theme) {
             AppTheme.Dark -> true
             AppTheme.Light -> false
