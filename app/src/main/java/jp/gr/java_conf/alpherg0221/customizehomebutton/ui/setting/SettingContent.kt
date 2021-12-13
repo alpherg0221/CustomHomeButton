@@ -16,8 +16,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import com.google.accompanist.insets.navigationBarsPadding
 import customizehomebutton.R
+import jp.gr.java_conf.alpherg0221.compose.material.InsetAwareTopAppBar
 import jp.gr.java_conf.alpherg0221.customizehomebutton.model.AppTheme
-import jp.gr.java_conf.alpherg0221.customizehomebutton.ui.components.InsetAwareTopAppBar
 import jp.gr.java_conf.alpherg0221.customizehomebutton.ui.components.PreferencesItem
 import jp.gr.java_conf.alpherg0221.customizehomebutton.ui.components.PreferencesTitle
 import jp.gr.java_conf.alpherg0221.customizehomebutton.utils.toLongString
