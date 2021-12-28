@@ -20,7 +20,7 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import customizehomebutton.R
-import jp.gr.java_conf.alpherg0221.customizehomebutton.ui.components.DrawerButton
+import jp.gr.java_conf.alpherg0221.compose.material.DrawerButton
 
 @Composable
 fun AppDrawer(
