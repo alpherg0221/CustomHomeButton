@@ -16,7 +16,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.google.accompanist.insets.navigationBarsPadding
 
 @Composable
 fun SetDefaultAssistantScreen(
@@ -27,7 +26,7 @@ fun SetDefaultAssistantScreen(
 
     Surface(color = MaterialTheme.colors.background) {
         Column(
-            modifier = Modifier.fillMaxSize().navigationBarsPadding(),
+            modifier = Modifier.fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {

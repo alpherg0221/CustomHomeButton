@@ -19,7 +19,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.google.accompanist.insets.navigationBarsPadding
 import customizehomebutton.R
 import jp.gr.java_conf.alpherg0221.compose.material.InsetAwareTopAppBar
 import jp.gr.java_conf.alpherg0221.customizehomebutton.model.AppInfo
@@ -57,7 +56,7 @@ fun HomeContent(
             )
         },
     ) {
-        Column(modifier = Modifier.navigationBarsPadding()) {
+        Column {
             Surface(elevation = 4.dp) {
                 Column {
                     Title()

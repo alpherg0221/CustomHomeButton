@@ -5,9 +5,7 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBack
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import com.google.accompanist.insets.navigationBarsPadding
 import customizehomebutton.R
 import jp.gr.java_conf.alpherg0221.compose.material.InsetAwareTopAppBar
 import jp.gr.java_conf.alpherg0221.customizehomebutton.ui.components.PreferencesItem
@@ -33,7 +31,7 @@ fun MyAppInfoContent(
             )
         },
     ) {
-        Column(modifier = Modifier.navigationBarsPadding()) {
+        Column {
             PreferencesItem(
                 title = stringResource(R.string.version),
                 subtitle = stringResource(id = R.string.version_sub),

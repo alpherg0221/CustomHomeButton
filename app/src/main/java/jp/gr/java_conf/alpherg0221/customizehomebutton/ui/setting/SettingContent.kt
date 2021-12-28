@@ -11,10 +11,8 @@ import androidx.compose.material.icons.rounded.Brightness4
 import androidx.compose.material.icons.rounded.Brightness7
 import androidx.compose.material.icons.rounded.Error
 import androidx.compose.runtime.*
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import com.google.accompanist.insets.navigationBarsPadding
 import customizehomebutton.R
 import jp.gr.java_conf.alpherg0221.compose.material.InsetAwareTopAppBar
 import jp.gr.java_conf.alpherg0221.customizehomebutton.model.AppTheme
@@ -53,7 +51,7 @@ fun SettingContent(
                 )
             },
             content = {
-                Column(modifier = Modifier.navigationBarsPadding()) {
+                Column {
                     PreferencesTitle(title = stringResource(id = R.string.general))
                     PreferencesItem(
                         title = stringResource(R.string.theme),
