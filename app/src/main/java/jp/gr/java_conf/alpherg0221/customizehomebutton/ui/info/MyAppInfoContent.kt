@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import customizehomebutton.R
 import jp.gr.java_conf.alpherg0221.compose.material.InsetAwareTopAppBar
-import jp.gr.java_conf.alpherg0221.customizehomebutton.ui.components.PreferencesItem
+import jp.gr.java_conf.alpherg0221.compose.material.PreferencesItem
 
 @Composable
 fun MyAppInfoContent(
