@@ -12,13 +12,13 @@ plugins {
 }
 
 android {
-    compileSdk = 31
+    compileSdk = 32
     buildToolsVersion = "31.0.0 rc2"
 
     defaultConfig {
         applicationId = "jp.gr.java_conf.alpherg0221.customizehomebutton"
         minSdk = 28
-        targetSdk = 31
+        targetSdk = 32
         versionCode = 2
         versionName = "1.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

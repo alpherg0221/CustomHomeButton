@@ -1,6 +1,6 @@
 buildscript {
     // Library version
-    val kotlinVersion by extra("1.7.0")
+    val kotlinVersion by extra("1.6.21")
     val coroutinesVersion by extra("1.6.2")
     val composeVersion by extra("1.2.0-rc01")
     val lifecycleVersion by extra("2.4.1")

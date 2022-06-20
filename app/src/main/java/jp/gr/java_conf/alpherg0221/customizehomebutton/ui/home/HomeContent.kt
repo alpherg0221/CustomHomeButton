@@ -1,10 +1,11 @@
 package jp.gr.java_conf.alpherg0221.customizehomebutton.ui.home
 
 import android.content.res.Configuration
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.*
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Check
@@ -24,7 +25,7 @@ import jp.gr.java_conf.alpherg0221.compose.material.InsetAwareTopAppBar
 import jp.gr.java_conf.alpherg0221.customizehomebutton.model.AppInfo
 
 
-@OptIn(ExperimentalFoundationApi::class, ExperimentalMaterialApi::class)
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun HomeContent(
     scaffoldState: ScaffoldState,
@@ -75,7 +76,7 @@ fun HomeContent(
                 } else {
                     if (isGrid) {
                         LazyVerticalGrid(
-                            cells = GridCells.Fixed(if (orientation == Configuration.ORIENTATION_LANDSCAPE) 4 else 3),
+                            columns = GridCells.Fixed(if (orientation == Configuration.ORIENTATION_LANDSCAPE) 4 else 3),
                             contentPadding = PaddingValues(3.dp)
                         ) {
                             items(appInfoList.size) { index ->
