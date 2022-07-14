@@ -34,8 +34,6 @@ android {
             )
         }
         getByName("debug") {
-            isMinifyEnabled = false
-            isShrinkResources = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -50,11 +48,10 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
-        dataBinding = true
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = composeVersion
+        kotlinCompilerExtensionVersion = "1.2.0"
     }
 }
 
@@ -63,8 +60,8 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion")
 
     implementation("androidx.core:core-ktx:1.8.0")
-    implementation("androidx.activity:activity-ktx:1.4.0")
-    implementation("androidx.fragment:fragment-ktx:1.4.1")
+    implementation("androidx.activity:activity-ktx:1.5.0")
+    implementation("androidx.fragment:fragment-ktx:1.5.0")
     implementation("androidx.appcompat:appcompat:1.4.2")
     implementation("androidx.core:core-splashscreen:1.0.0-rc01")
     implementation("com.google.android.material:material:1.6.1")
@@ -74,7 +71,6 @@ dependencies {
     // lifecycle
     implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion")
@@ -87,9 +83,8 @@ dependencies {
     implementation("androidx.compose.material:material:$composeVersion")
     implementation("androidx.compose.material:material-icons-core:$composeVersion")
     implementation("androidx.compose.material:material-icons-extended:$composeVersion")
-    implementation("androidx.compose.runtime:runtime-livedata:$composeVersion")
-    implementation("androidx.activity:activity-compose:1.4.0")
-    implementation("androidx.navigation:navigation-compose:2.5.0-rc02")
+    implementation("androidx.activity:activity-compose:1.5.0")
+    implementation("androidx.navigation:navigation-compose:2.5.0")
 
     // accompanist
     implementation("com.google.accompanist:accompanist-coil:0.15.0")

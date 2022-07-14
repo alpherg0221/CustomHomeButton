@@ -10,7 +10,6 @@ import jp.gr.java_conf.alpherg0221.customizehomebutton.data.AppContainer
 import jp.gr.java_conf.alpherg0221.customizehomebutton.ui.home.HomeScreen
 import jp.gr.java_conf.alpherg0221.customizehomebutton.ui.home.HomeViewModel
 import jp.gr.java_conf.alpherg0221.customizehomebutton.ui.info.MyAppInfoScreen
-import jp.gr.java_conf.alpherg0221.customizehomebutton.ui.info.MyAppInfoViewModel
 import jp.gr.java_conf.alpherg0221.customizehomebutton.ui.setdefault.SetDefaultAssistantScreen
 import jp.gr.java_conf.alpherg0221.customizehomebutton.ui.setting.SettingScreen
 import jp.gr.java_conf.alpherg0221.customizehomebutton.ui.setting.SettingViewModel
@@ -52,11 +51,7 @@ fun CHBNavGraph(
             )
         }
         composable(CHBDestinations.APP_INFO_ROUTE) {
-            val myAppInfoViewModel: MyAppInfoViewModel = viewModel(
-                factory = MyAppInfoViewModel.provideFactory()
-            )
             MyAppInfoScreen(
-                myAppInfoViewModel = myAppInfoViewModel,
                 navigateToOSS = navigationActions.navigateToOSS,
                 onBack = onBack,
             )

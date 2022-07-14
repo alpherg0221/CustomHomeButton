@@ -7,12 +7,9 @@ import androidx.compose.ui.platform.LocalContext
 
 @Composable
 fun MyAppInfoScreen(
-    myAppInfoViewModel: MyAppInfoViewModel,
     navigateToOSS: () -> Unit,
     onBack: () -> Unit
 ) {
-    val uiState by myAppInfoViewModel.myAppInfoUiState.collectAsState()
-
     MyAppInfoContent(
         onBack = onBack,
         onVersionClick = { },

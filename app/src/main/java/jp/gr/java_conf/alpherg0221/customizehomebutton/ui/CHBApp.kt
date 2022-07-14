@@ -96,13 +96,3 @@ fun CHBApp(
 
     }
 }
-
-@Composable
-fun rememberContentPaddingForScreen(additionalTop: Dp = 0.dp) =
-    rememberInsetsPaddingValues(
-        insets = LocalWindowInsets.current.systemBars,
-        applyTop = false,
-        applyEnd = false,
-        applyStart = false,
-        additionalTop = additionalTop
-    )

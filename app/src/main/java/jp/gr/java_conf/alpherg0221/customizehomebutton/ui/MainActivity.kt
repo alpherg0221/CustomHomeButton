@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
-        val splashScreen = installSplashScreen()
+        installSplashScreen()
 
         val appContainer = (application as CHBApplication).container
 
