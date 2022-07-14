@@ -88,7 +88,6 @@ dependencies {
 
     // accompanist
     implementation("com.google.accompanist:accompanist-coil:0.15.0")
-    implementation("com.google.accompanist:accompanist-insets:$accompanistVersion")
     implementation("com.google.accompanist:accompanist-systemuicontroller:$accompanistVersion")
 
     // window

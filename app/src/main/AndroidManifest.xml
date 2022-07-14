@@ -19,6 +19,7 @@
         android:theme="@style/Theme.CustomHomeButton.NoActionBar">
         <activity
             android:name="jp.gr.java_conf.alpherg0221.customizehomebutton.ui.MainActivity"
+            android:windowSoftInputMode="adjustResize"
             android:exported="true"
             android:theme="@style/Theme.CustomHomeButton.Starting">
             <intent-filter>
