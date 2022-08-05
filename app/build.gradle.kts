@@ -60,10 +60,10 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion")
 
     implementation("androidx.core:core-ktx:1.8.0")
-    implementation("androidx.activity:activity-ktx:1.5.0")
-    implementation("androidx.fragment:fragment-ktx:1.5.0")
+    implementation("androidx.activity:activity-ktx:1.5.1")
+    implementation("androidx.fragment:fragment-ktx:1.5.1")
     implementation("androidx.appcompat:appcompat:1.4.2")
-    implementation("androidx.core:core-splashscreen:1.0.0-rc01")
+    implementation("androidx.core:core-splashscreen:1.0.0")
     implementation("com.google.android.material:material:1.6.1")
 
     implementation("com.github.alpherg0221:ComposeComponents:1.0.0-alpha06")
@@ -83,15 +83,15 @@ dependencies {
     implementation("androidx.compose.material:material:$composeVersion")
     implementation("androidx.compose.material:material-icons-core:$composeVersion")
     implementation("androidx.compose.material:material-icons-extended:$composeVersion")
-    implementation("androidx.activity:activity-compose:1.5.0")
-    implementation("androidx.navigation:navigation-compose:2.5.0")
+    implementation("androidx.activity:activity-compose:1.5.1")
+    implementation("androidx.navigation:navigation-compose:2.5.1")
 
     // accompanist
     implementation("com.google.accompanist:accompanist-coil:0.15.0")
     implementation("com.google.accompanist:accompanist-systemuicontroller:$accompanistVersion")
 
     // window
-    implementation("androidx.window:window:1.1.0-alpha02")
+    implementation("androidx.window:window:1.1.0-alpha03")
 
     // datastore
     implementation("androidx.datastore:datastore-preferences:1.0.0")
