@@ -66,7 +66,7 @@ dependencies {
     implementation("androidx.core:core-splashscreen:1.0.0-rc01")
     implementation("com.google.android.material:material:1.6.1")
 
-    implementation("com.github.alpherg0221:ComposeComponents:1.0.0-alpha04")
+    implementation("com.github.alpherg0221:ComposeComponents:1.0.0-alpha06")
 
     // lifecycle
     implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycleVersion")

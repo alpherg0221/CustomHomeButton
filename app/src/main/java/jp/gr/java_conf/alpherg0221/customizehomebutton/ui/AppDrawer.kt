@@ -31,7 +31,6 @@ fun AppDrawer(
     closeDrawer: () -> Unit,
 ) {
     Column(modifier = Modifier.fillMaxSize()) {
-        Spacer(modifier = Modifier.height(24.dp))
         CHBLogo(Modifier.padding(20.dp))
         Divider(color = MaterialTheme.colors.onSurface.copy(alpha = .2f))
         DrawerButton(
