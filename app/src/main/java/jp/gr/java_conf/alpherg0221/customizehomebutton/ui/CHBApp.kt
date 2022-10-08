@@ -3,25 +3,22 @@ package jp.gr.java_conf.alpherg0221.customizehomebutton.ui
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.navigationBarsPadding
-import androidx.compose.foundation.layout.systemBarsPadding
-import androidx.compose.material.*
+import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import jp.gr.java_conf.alpherg0221.compose.material.theme.BlueJadeTheme
+import jp.gr.java_conf.alpherg0221.compose.material3.theme.BlueJadeTheme
 import jp.gr.java_conf.alpherg0221.customizehomebutton.data.AppContainer
 import jp.gr.java_conf.alpherg0221.customizehomebutton.model.AppTheme
-import jp.gr.java_conf.alpherg0221.customizehomebutton.utils.WindowSize
+import jp.gr.java_conf.alpherg0221.customizehomebutton.ui.components.AppDrawer3
 import kotlinx.coroutines.launch
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CHBApp(
-    appContainer: AppContainer,
-    windowSize: WindowSize,
-) {
+fun CHBApp(appContainer: AppContainer) {
     val theme by appContainer.settingRepository.observeTheme()
         .collectAsState(initial = AppTheme.Default)
     val isDefaultAssistApp = remember {
@@ -36,7 +33,7 @@ fun CHBApp(
         }
     ) {
         val systemUiController = rememberSystemUiController()
-        val darkIcons = MaterialTheme.colors.isLight
+        val darkIcons = !isSystemInDarkTheme()
         SideEffect {
             systemUiController.setStatusBarColor(Color.Transparent, darkIcons = darkIcons)
         }
@@ -49,38 +46,36 @@ fun CHBApp(
         val scope = rememberCoroutineScope()
 
         val navBackStackEntry by navController.currentBackStackEntryAsState()
-        val currentRoute =
-            navBackStackEntry?.destination?.route ?: CHBDestinations.HOME_ROUTE
+        val currentRoute = navBackStackEntry?.destination?.route ?: CHBDest.HOME_ROUTE
 
-        val isExpandedScreen = windowSize == WindowSize.Expanded
-        val sizeAwareDrawerState = rememberDrawerState(DrawerValue.Closed)
+        val drawerState = rememberDrawerState(DrawerValue.Closed)
 
         BackHandler(
-            enabled = sizeAwareDrawerState.isOpen,
-            onBack = { scope.launch { sizeAwareDrawerState.close() } }
+            enabled = drawerState.isOpen,
+            onBack = { scope.launch { drawerState.close() } }
         )
 
-        ModalDrawer(
+        ModalNavigationDrawer(
             drawerContent = {
-                AppDrawer(
+                AppDrawer3(
                     currentRoute = currentRoute,
                     navigateToHome = navigationActions.navigateToHome,
                     navigateToSetting = navigationActions.navigateToSetting,
                     navigateToInfo = navigationActions.navigateToInfo,
-                    closeDrawer = { scope.launch { sizeAwareDrawerState.close() } }
+                    closeDrawer = { scope.launch { drawerState.close() } }
                 )
             },
-            modifier = Modifier.systemBarsPadding().navigationBarsPadding(),
-            drawerState = sizeAwareDrawerState,
-            gesturesEnabled = currentRoute == CHBDestinations.HOME_ROUTE,
+            modifier = Modifier.navigationBarsPadding(),
+            drawerState = drawerState,
+            gesturesEnabled = currentRoute == CHBDest.HOME_ROUTE,
         ) {
             CHBNavGraph(
                 appContainer = appContainer,
                 navController = navController,
-                openDrawer = { scope.launch { sizeAwareDrawerState.open() } },
+                openDrawer = { scope.launch { drawerState.open() } },
                 onBack = navigationActions.onBack,
                 navigationActions = navigationActions,
-                startDestination = if (isDefaultAssistApp.value) CHBDestinations.HOME_ROUTE else CHBDestinations.DEFAULT_ROUTE,
+                startDestination = if (isDefaultAssistApp.value) CHBDest.HOME_ROUTE else CHBDest.DEFAULT_ROUTE,
                 reload = {
                     isDefaultAssistApp.value =
                         appContainer.deviceRepository.isDefaultAssistApp()

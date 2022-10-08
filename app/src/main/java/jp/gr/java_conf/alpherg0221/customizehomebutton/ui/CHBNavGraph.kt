@@ -21,14 +21,14 @@ fun CHBNavGraph(
     openDrawer: () -> Unit = {},
     onBack: () -> Unit = {},
     navigationActions: CHBAppNavigationActions,
-    startDestination: String = CHBDestinations.HOME_ROUTE,
+    startDestination: String = CHBDest.HOME_ROUTE,
     reload: () -> Unit = {},
 ) {
     NavHost(
         navController = navController,
         startDestination = startDestination,
     ) {
-        composable(CHBDestinations.HOME_ROUTE) {
+        composable(CHBDest.HOME_ROUTE) {
             val homeViewModel: HomeViewModel = viewModel(
                 factory = HomeViewModel.provideFactory(
                     appInfoRepository = appContainer.appInfoRepository
@@ -39,7 +39,7 @@ fun CHBNavGraph(
                 openDrawer = openDrawer,
             )
         }
-        composable(CHBDestinations.SETTINGS_ROUTE) {
+        composable(CHBDest.SETTINGS_ROUTE) {
             val settingsViewModel: SettingViewModel = viewModel(
                 factory = SettingViewModel.provideFactory(
                     settingRepository = appContainer.settingRepository
@@ -50,13 +50,13 @@ fun CHBNavGraph(
                 onBack = onBack,
             )
         }
-        composable(CHBDestinations.APP_INFO_ROUTE) {
+        composable(CHBDest.APP_INFO_ROUTE) {
             MyAppInfoScreen(
                 navigateToOSS = navigationActions.navigateToOSS,
                 onBack = onBack,
             )
         }
-        composable(CHBDestinations.DEFAULT_ROUTE) {
+        composable(CHBDest.DEFAULT_ROUTE) {
             SetDefaultAssistantScreen(reload = reload)
         }
     }

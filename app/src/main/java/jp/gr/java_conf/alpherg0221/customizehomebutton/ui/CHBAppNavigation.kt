@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.navigation.NavHostController
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 
-object CHBDestinations {
+object CHBDest {
     const val HOME_ROUTE = "home"
     const val SETTINGS_ROUTE = "settings"
     const val APP_INFO_ROUTE = "app_info"
@@ -13,13 +13,13 @@ object CHBDestinations {
 
 class CHBAppNavigationActions(navController: NavHostController) {
     val navigateToHome: () -> Unit = {
-        navController.navigate(CHBDestinations.HOME_ROUTE)
+        navController.navigate(CHBDest.HOME_ROUTE)
     }
     val navigateToSetting: () -> Unit = {
-        navController.navigate(CHBDestinations.SETTINGS_ROUTE)
+        navController.navigate(CHBDest.SETTINGS_ROUTE)
     }
     val navigateToInfo: () -> Unit = {
-        navController.navigate(CHBDestinations.APP_INFO_ROUTE)
+        navController.navigate(CHBDest.APP_INFO_ROUTE)
     }
     val navigateToOSS: () -> Unit = {
         val context = navController.context

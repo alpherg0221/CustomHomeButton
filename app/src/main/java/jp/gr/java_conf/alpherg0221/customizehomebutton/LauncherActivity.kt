@@ -20,7 +20,7 @@ class LauncherActivity : AppCompatActivity() {
                 appInfoRepository.observeSelectedAppInfo().first()
 
             if (activityName == "Not Selected" || packageName == "Not Selected") {
-
+                return@launch
             }
 
             startTargetActivity(

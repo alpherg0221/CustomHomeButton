@@ -3,10 +3,7 @@ package jp.gr.java_conf.alpherg0221.customizehomebutton.ui.home
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.CalendarViewMonth
-import androidx.compose.material.icons.rounded.FormatListBulleted
+import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.platform.LocalContext
 import kotlinx.coroutines.launch
@@ -21,12 +18,12 @@ fun HomeScreen(
     val isGrid by homeViewModel.isGrid.collectAsState()
 
     val scope = rememberCoroutineScope()
-    val scaffoldState = rememberScaffoldState()
+    val snackbarHostState = SnackbarHostState()
     val listState = rememberLazyListState()
     val context = LocalContext.current
 
     HomeContent(
-        scaffoldState = scaffoldState,
+        snackbarHostState = snackbarHostState,
         listState = listState,
         isLoading = uiState.loading,
         isGrid = isGrid,
@@ -40,10 +37,11 @@ fun HomeScreen(
                     .setAction("android.intent.category.LAUNCHER")
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     .setClassName(selectedAppInfo.packageName, selectedAppInfo.activityName)
+
                 try {
                     context.startActivity(intent)
                 } catch (e: ActivityNotFoundException) {
-                    scaffoldState.snackbarHostState.showSnackbar(
+                    snackbarHostState.showSnackbar(
                         message = "Failed to launch the app",
                         duration = SnackbarDuration.Short
                     )
@@ -51,13 +49,6 @@ fun HomeScreen(
             }
         },
         onListClick = { scope.launch { homeViewModel.setSelectedAppInfo(it) } },
-        actions = {
-            IconButton(onClick = { scope.launch { homeViewModel.setIsGrid(!isGrid) } }) {
-                Icon(
-                    imageVector = if (isGrid) Icons.Rounded.FormatListBulleted else Icons.Rounded.CalendarViewMonth,
-                    contentDescription = null
-                )
-            }
-        }
+        actionClick = { scope.launch { homeViewModel.setIsGrid(!isGrid) } }
     )
 }

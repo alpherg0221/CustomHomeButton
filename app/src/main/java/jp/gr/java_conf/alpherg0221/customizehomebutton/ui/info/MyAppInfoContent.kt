@@ -1,15 +1,18 @@
 package jp.gr.java_conf.alpherg0221.customizehomebutton.ui.info
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.material.*
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBack
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import customizehomebutton.R
-import jp.gr.java_conf.alpherg0221.compose.material.InsetAwareTopAppBar
-import jp.gr.java_conf.alpherg0221.compose.material.PreferencesItem
+import jp.gr.java_conf.alpherg0221.customizehomebutton.ui.components.PreferencesItem
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MyAppInfoContent(
     onBack: () -> Unit,
@@ -18,20 +21,18 @@ fun MyAppInfoContent(
 ) {
     Scaffold(
         topBar = {
-            InsetAwareTopAppBar(
-                title = { Text(text = stringResource(R.string.app_information)) },
+            SmallTopAppBar(
+                title = { Text(text = stringResource(id = R.string.app_information)) },
+                modifier = Modifier.statusBarsPadding(),
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(
-                            imageVector = Icons.Rounded.ArrowBack,
-                            contentDescription = null
-                        )
+                        Icon(imageVector = Icons.Rounded.ArrowBack, contentDescription = null)
                     }
                 }
             )
         },
-    ) {
-        Column {
+    ) { padding ->
+        Column(modifier = Modifier.padding(padding)) {
             PreferencesItem(
                 title = stringResource(R.string.version),
                 subtitle = stringResource(id = R.string.version_sub),

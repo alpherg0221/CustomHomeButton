@@ -53,6 +53,7 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.2.0"
     }
+    namespace = "customizehomebutton"
 }
 
 dependencies {
@@ -66,7 +67,7 @@ dependencies {
     implementation("androidx.core:core-splashscreen:1.0.0")
     implementation("com.google.android.material:material:1.6.1")
 
-    implementation("com.github.alpherg0221:ComposeComponents:1.0.0-alpha06")
+    implementation("com.github.alpherg0221:ComposeComponents:1.0.0-alpha08")
 
     // lifecycle
     implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycleVersion")
@@ -83,6 +84,7 @@ dependencies {
     implementation("androidx.compose.material:material:$composeVersion")
     implementation("androidx.compose.material:material-icons-core:$composeVersion")
     implementation("androidx.compose.material:material-icons-extended:$composeVersion")
+    implementation("androidx.compose.material3:material3:1.0.0-alpha15")
     implementation("androidx.activity:activity-compose:1.5.1")
     implementation("androidx.navigation:navigation-compose:2.5.1")
 
