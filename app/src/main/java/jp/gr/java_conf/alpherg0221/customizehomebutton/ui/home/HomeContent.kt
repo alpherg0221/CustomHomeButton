@@ -43,7 +43,6 @@ fun HomeContent(
         topBar = {
             CenterAlignedTopAppBar(
                 title = { Text(text = "CustomizeHomeButton") },
-                modifier = Modifier.statusBarsPadding(),
                 navigationIcon = {
                     IconButton(onClick = openDrawer) {
                         Icon(imageVector = Icons.Rounded.Menu, contentDescription = null)

@@ -2,7 +2,6 @@ package jp.gr.java_conf.alpherg0221.customizehomebutton.ui.info
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBack
 import androidx.compose.material3.*
@@ -21,9 +20,7 @@ fun MyAppInfoContent(
 ) {
     Scaffold(
         topBar = {
-            SmallTopAppBar(
-                title = { Text(text = stringResource(id = R.string.app_information)) },
-                modifier = Modifier.statusBarsPadding(),
+            TopAppBar(title = { Text(text = stringResource(id = R.string.app_information)) },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(imageVector = Icons.Rounded.ArrowBack, contentDescription = null)

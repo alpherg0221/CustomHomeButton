@@ -2,10 +2,8 @@ package jp.gr.java_conf.alpherg0221.customizehomebutton.ui
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
@@ -65,7 +63,6 @@ fun CHBApp(appContainer: AppContainer) {
                     closeDrawer = { scope.launch { drawerState.close() } }
                 )
             },
-            modifier = Modifier.navigationBarsPadding(),
             drawerState = drawerState,
             gesturesEnabled = currentRoute == CHBDest.HOME_ROUTE,
         ) {

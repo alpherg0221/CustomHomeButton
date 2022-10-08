@@ -2,12 +2,8 @@ package jp.gr.java_conf.alpherg0221.customizehomebutton.ui.setting
 
 import android.content.res.Configuration
 import androidx.activity.compose.BackHandler
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.ColumnScope
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CornerSize
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.ModalBottomSheetLayout
 import androidx.compose.material.ModalBottomSheetState
@@ -41,6 +37,7 @@ fun SettingContent(
 ) {
     BackHandler(enabled = backHandlerEnable, onBack = onCloseBottomSheet)
     ModalBottomSheetLayout(
+        modifier = Modifier.navigationBarsPadding(),
         sheetState = sheetState,
         sheetShape = MaterialTheme.shapes.extraLarge.copy(
             bottomStart = CornerSize(0.dp),
@@ -51,9 +48,8 @@ fun SettingContent(
     ) {
         Scaffold(
             topBar = {
-                SmallTopAppBar(
+                TopAppBar(
                     title = { Text(text = stringResource(R.string.settings)) },
-                    modifier = Modifier.statusBarsPadding(),
                     navigationIcon = {
                         IconButton(onClick = onBack) {
                             Icon(

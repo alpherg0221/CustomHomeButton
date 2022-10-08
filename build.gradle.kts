@@ -1,10 +1,10 @@
 buildscript {
     // Library version
-    val kotlinVersion by extra("1.7.0")
+    val kotlinVersion by extra("1.7.10")
     val coroutinesVersion by extra("1.6.4")
-    val composeVersion by extra("1.3.0-alpha02")
+    val composeVersion by extra("1.3.0-rc01")
     val lifecycleVersion by extra("2.5.1")
-    val accompanistVersion by extra("0.26.0-alpha")
+    val accompanistVersion by extra("0.26.5-rc")
 
     repositories {
         google()

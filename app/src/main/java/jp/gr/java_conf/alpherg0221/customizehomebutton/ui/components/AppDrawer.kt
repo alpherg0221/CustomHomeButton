@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import customizehomebutton.R
 import jp.gr.java_conf.alpherg0221.customizehomebutton.ui.CHBDest
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AppDrawer3(
     currentRoute: String,
@@ -30,35 +31,37 @@ fun AppDrawer3(
     navigateToInfo: () -> Unit,
     closeDrawer: () -> Unit,
 ) {
-    Spacer(Modifier.windowInsetsTopHeight(WindowInsets.statusBars))
-    CHBLogo()
-    DrawerItem(
-        label = stringResource(R.string.home),
-        selected = currentRoute == CHBDest.HOME_ROUTE,
-        onClick = {
-            navigateToHome()
-            closeDrawer()
-        },
-        icon = Icons.Rounded.Home,
-    )
-    DrawerItem(
-        label = stringResource(R.string.settings),
-        selected = currentRoute == CHBDest.SETTINGS_ROUTE,
-        onClick = {
-            navigateToSetting()
-            closeDrawer()
-        },
-        icon = Icons.Rounded.Settings,
-    )
-    DrawerItem(
-        label = stringResource(R.string.app_information),
-        selected = currentRoute == CHBDest.APP_INFO_ROUTE,
-        onClick = {
-            navigateToInfo()
-            closeDrawer()
-        },
-        icon = Icons.Rounded.Info,
-    )
+    ModalDrawerSheet {
+        Spacer(Modifier.windowInsetsTopHeight(WindowInsets.statusBars))
+        CHBLogo()
+        DrawerItem(
+            label = stringResource(R.string.home),
+            selected = currentRoute == CHBDest.HOME_ROUTE,
+            onClick = {
+                navigateToHome()
+                closeDrawer()
+            },
+            icon = Icons.Rounded.Home,
+        )
+        DrawerItem(
+            label = stringResource(R.string.settings),
+            selected = currentRoute == CHBDest.SETTINGS_ROUTE,
+            onClick = {
+                navigateToSetting()
+                closeDrawer()
+            },
+            icon = Icons.Rounded.Settings,
+        )
+        DrawerItem(
+            label = stringResource(R.string.app_information),
+            selected = currentRoute == CHBDest.APP_INFO_ROUTE,
+            onClick = {
+                navigateToInfo()
+                closeDrawer()
+            },
+            icon = Icons.Rounded.Info,
+        )
+    }
 }
 
 @Composable
